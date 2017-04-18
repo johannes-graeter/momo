@@ -22,7 +22,7 @@ Email: johannes.graeter@kit.edu
 % make the title area
 \maketitle
 \section{Remarks}
-This is additional material for the paper \"Momo: Monocular Motion Estimation on Manifolds\".
+This is additional material for the paper 'Momo: Monocular Motion Estimation on Manifolds' .
 Herein the simulation affected to choose the best error metric is presented in more detail.
 
 \section{Simulation}
@@ -37,7 +37,7 @@ In order to choose the most suitable cost function and validate our algorithm, a
 
 By adding gaussian noise on the simulated measurements in the image the stability of the different error functions is analysed.
 Therefore the simulated flow serves as input for all three error metrics depicted in the paper.
-Sampling over the dimensions of the motion state results in the error landscapes show in fig.~\ref{fig:error_landscapes}.
+Sampling over the dimensions of the motion state results in the error landscapes shown in fig.~\ref{fig:error_landscapes}.
 
 \begin{figure}[htb]
 \centering
@@ -58,12 +58,12 @@ Sampling over the dimensions of the motion state results in the error landscapes
 \subfloat[SampLine]{\includegraphics[width=0.8\textwidth]{cost_map_cost_sampson}%
 \label{fig:error_landscapes:sampson_distance}}
 
-\caption{Error landscapes for simulated flow, fig.~\ref{flow_simulation} for arc length and yaw angle of the single-track-motion-model. Whereas the shape of the landscapes of $GeoLine$ and $AnglePlane$ are nearly identical, $SampLine$ shows a valley small arc lengths, because the linearisation assumptions are violated.}
+\caption{Error landscapes for simulated flow as shown in fig.~\ref{fig:flow_simulation} for arc length and yaw angle of the single-track-motion-model. Whereas the shape of the landscapes of $GeoLine$ and $AnglePlane$ are nearly identical, $SampLine$ shows a valley small arc lengths, because the linearisation assumptions are violated.}
 \label{fig:error_landscapes}
 \end{figure}
 
-Moreover stability has been examined. Therefore noise is added and deviation is added to the motion estimate prior.
-After 4 iterations the error to the groundtruth is evaluated and shown in the histograms in fig.~\ref{fig:histograms}.
+Moreover, stability has been examined. Random noise and deviation are added to the motion estimate prior.
+After 4 iterations, the error to the groundtruth is evaluated and the results are shown in the histograms in fig.~\ref{fig:histograms}.
 
 \begin{figure}[htb]
 \centering
@@ -72,7 +72,7 @@ After 4 iterations the error to the groundtruth is evaluated and shown in the hi
 \label{fig:histograms}
 \end{figure}
 
-As a result both error metrics, $GeoLine$ and $AnglePlane$, are suitable choices for the potential function.
+As a result, both error metrics, $GeoLine$ and $AnglePlane$, are suitable choices for the potential function.
 In order to enable general camera models and obtain fast convergence, $AnglePlane$ is chosen.
 When an extrinsic calibration is added to the problem, the error landscape of $AnglePlane$ changes form as shown in fig.~\ref{fig:landscape_scale}.
 As described in the paper the minimum of the error landscape becomes unique and the scale therefore observable. 
