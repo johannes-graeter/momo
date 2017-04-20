@@ -10,7 +10,7 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>mrt_cmake_modules</build_depend>
-  <test_depend>gtest</test_depend>
+  <!--test_depend>gtest</test_depend-->
   <!-- 
     Documentation for dependencies:
     <build_depend>            Build-time dependency required to build 
@@ -31,7 +31,7 @@
   -->
 
    <depend>eigen</depend> 
-   <depend>mrt_ceres</depend> 
+   <depend>ceres</depend> 
   
   <export>
     <!-- Other tools can request additional information be placed here -->

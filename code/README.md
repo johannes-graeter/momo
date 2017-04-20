@@ -22,8 +22,9 @@
     - <code>git clone https://github.com/KIT-MRT/mrt_cmake_modules.git</code>
 * ceres: 
     - follow the instructions on [http://ceres-solver.org/installation.html](http://ceres-solver.org/installation.html)
-* googltest for unittests:
+* googletest for unittests:
     - <code>sudo apt-get install libgtest-dev</code>
+    - uncomment **<test_depend>gtest</test_depend>** in package.xml to activate unittests
 
 ### installation
 * initiate a catkin workspace 
