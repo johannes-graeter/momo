@@ -10,6 +10,9 @@
     * We can use any number of cameras we want, including all matches into one single optimization problem
     * We can reduce the parameter space so that hypothesis that are not feasible will be ignored (f.e. the main part of the image consists of a moving object).
     * We can easily implement new motion models
+   
+* The corresponding paper and additional information can be found in ./docu
+* Videos of the system in action can be found in ./video, use git-lfs  
 
 ## Install
 ### Requirements
