@@ -17,19 +17,32 @@
 <code>sudo apt-get install libeigen3-dev</code>
 * catkin: 
     - follow the instructions on [http://wiki.ros.org/catkin](http://wiki.ros.org/catkin) or install ros
-* mrt_cmake_modules:
-    - <code>cd *your_catkin_workspace*</code>
-    - <code>git clone https://github.com/KIT-MRT/mrt_cmake_modules.git</code>
 * ceres: 
     - follow the instructions on [http://ceres-solver.org/installation.html](http://ceres-solver.org/installation.html)
 * googletest for unittests:
     - <code>sudo apt-get install libgtest-dev</code>
-    - uncomment **<test_depend>gtest</test_depend>** in package.xml to activate unittests
 
 ### installation
-* initiate a catkin workspace 
-* clone mrt_cmake_modules and this repo into the workspace
-* build it with catkin: <code>catkin build --release</code>
+* initiate a catkin workspace:
+    - <code>cd *your_catkin_workspace*</code>
+    - <code>cd *your_catkin_workspace*/src</code>
+    - <code>catkin_init_workspace</code>
+* clone mrt_cmake_modules into src of workspace:
+    - <code>cd *your_catkin_workspace*/src</code>
+    - <code>git clone https://github.com/KIT-MRT/mrt_cmake_modules.git</code>
+* clone momo into src of workspace:
+    - <code>cd *your_catkin_workspace*/src</code>
+    - <code>git clone https://github.com/johannes-graeter/momo.git</code>
+* build it with catkin:
+    - <code>cd *your_catkin_workspace*</code>
+    - <code>catkin_make</code>
+* unittests:
+    - uncomment **<test_depend>gtest</test_depend>** in package.xml to activate unittests
+    - <code>cd *your_catkin_workspace*</code>
+    - <code>catkin_make run_tests</code>
+
+* tested with docker ros image
+
 ## Usage
 * Loss functions:
     * have a look on the [ceres header](https://github.com/kashif/ceres-solver/blob/master/include/ceres/loss_function.h)
@@ -37,7 +50,7 @@
 * Implemented error functions:
     * Errors in image space:
         * Epipolar errors: 
-            * Forward: "Normal* epipolar error, distance of image point to epipolar linear form old image to current image
+            * Forward: "Normal" epipolar error, distance of image point to epipolar linear form old image to current image
             * Backward: Same as forward but from current image to old image
             * Symmetric: Adding both as residual blocks results in the symmetric epipolar error as in [Multiple View Geometry](http://www.robots.ox.ac.uk/~az/tutorials/tutoriala.pdf)
         * Sampson distance: First order approximation of the geometric error as defined in [Multplie View Geometry](http://www.robots.ox.ac.uk/~az/tutorials/tutoriala.pdf) (called Zhang's distance)

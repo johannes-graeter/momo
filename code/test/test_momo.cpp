@@ -35,9 +35,9 @@
 //}
 //=======================================================================================================================================================
 #include <Eigen/Eigen>
-#include <momo/camera.hpp>
-#include <momo/cost_functions.hpp>
-#include <momo/cost_functors_ceres.hpp>
+#include "camera.hpp"
+#include "cost_functions.hpp"
+#include "cost_functors_ceres.hpp"
 #include "gtest/gtest.h"
 
 Eigen::Vector3d back_project(Eigen::Vector3d p, Eigen::Matrix3d intrin) {

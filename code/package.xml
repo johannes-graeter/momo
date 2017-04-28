@@ -2,7 +2,8 @@
 <package format="2">
   <name>momo</name>
   <version>1.0.0</version>
-
+  <description>mono-motion estimation library</description>
+  
   <license>LGPLv3</license>
   <maintainer email="johannes.graeter@kit.edu">Johannes Graeter</maintainer>
   <author email="johannes.graeter@kit.edu">Johannes Graeter</author>
@@ -31,7 +32,7 @@
   -->
 
    <depend>eigen</depend> 
-   <depend>ceres</depend> 
+   <depend>mrt_ceres</depend> 
   
   <export>
     <!-- Other tools can request additional information be placed here -->
