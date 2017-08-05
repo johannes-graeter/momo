@@ -1,7 +1,7 @@
 # Momo
 
 * Momo is a mono-motion estimation library.
-* Instead of calculating the full 5d movement (without scale) from matches, different motion-model based motion hypotheses are transformed into the camera coordinate system and the expected correspondances are compared with the measrued correspondances
+* Instead of calculating the full 5d movement (without scale) from matches, different motion-model based motion hypotheses are transformed into the camera coordinate system and the expected correspondences are compared with the measured correspondences
 * Interpreting matching errors as residual blocks we can formulate the motion estimation as a non-linear optimization problem
 * We solve it efficiently with google's ceres-solver
 * Advantages:
@@ -90,7 +90,7 @@ intrinsics<<f,0.,cu,0.,f,cv,0.,0.,1.;
 
 // extrinsics set to zero
 // REPLACE BY POSE FROM CAMERA TO MOTION CENTER
-Einge::Affine3d extrinsics = Eigen::Affine3d::Identity();
+Eigen::Affine3d extrinsics = Eigen::Affine3d::Identity();
 
 // camera storage class
 momo::Camera cam(extrinsics, intrinsics);
