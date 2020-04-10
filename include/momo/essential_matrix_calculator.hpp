@@ -81,6 +81,8 @@ private:
     ///@brief transfers the  motion of the reference frame into the camera frame
     ceres_eigen_types::Affine3<T> CalculateCameraMotion(
         ceres_eigen_types::Affine3<T> reference_motion) {
+        Assert(cam_->GetPoseReferenceToCamera().allFinite(), "transform from reference to camera has nan members. Did you set an invalid extrinsic calibration?");
+        Assert(cam_->GetPoseCameraToReference().allFinite(), "transform from camera to reference has nan members. Did you set an invalid extrinsic calibration?");
         // this is the rear camera motion 3d, not the motion of points in the camera frame
         ceres_eigen_types::Affine3<T> camera_motion = cam_->GetPoseCameraToReference().cast<T>() *
                                                       reference_motion *
