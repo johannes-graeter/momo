@@ -70,7 +70,7 @@ private:
 
         // calculate essential matrix
         Matrix3<T> essential_matrix =
-            motion_cam.rotation().inverse() * commons::GetCrossProdMatrix(motion_cam.translation().eval());
+            motion_cam.linear().inverse() * commons::GetCrossProdMatrix(motion_cam.translation().eval());
 
 
         Assert(essential_matrix.allFinite(), "essential matrix has nan members");
